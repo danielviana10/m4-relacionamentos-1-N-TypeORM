@@ -5,8 +5,8 @@ import listOwnerPetsService from "../services/owners/listOwnerPets.service";
 
 
 const createOwnerController = async (req: Request, res: Response) => {
-    const {name, email}: IOwnerRequest = req.body
-    const owner = await createOwnerService({name, email})
+    const {id, name, email}: IOwnerRequest = req.body
+    const owner = await createOwnerService({id, name, email})
     return res.status(201).json(owner)
 }
 
